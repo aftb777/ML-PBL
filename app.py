@@ -29,19 +29,19 @@ def forecast(sales_data):
 # -------- Routes --------
 @app.route('/')
 def home():
-    return render_template('index.htm')
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
     product_id = request.form['product_id']
 
     if product_id not in products:
-        return render_template('index.htm', prediction="Invalid Product ID")
+        return render_template('index.html', prediction="Invalid Product ID")
 
     name, sales = products[product_id]
     result = forecast(sales)
 
-    return render_template('index.htm',
+    return render_template('index.html',
                            prediction=f"{name} → Next Month Demand: {result} units")
 
 if __name__ == '__main__':
