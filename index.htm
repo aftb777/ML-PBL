@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demand Forecasting System</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Demand Forecasting System</h1>
+    <p class="subtitle">Predict Future Product Demand using Machine Learning</p>
+
+    <!-- Form sends data to Flask -->
+    <form action="/predict" method="post">
+
+        <label>Product ID</label>
+        <input type="text" name="product_id" placeholder="Enter Product ID (P101 / P102 / P103)" required>
+
+        <label>Previous Sales</label>
+        <input type="number" name="sales" placeholder="Enter Previous Sales" required>
+
+        <label>Month</label>
+        <input type="number" name="month" placeholder="Enter Month (1-12)" required>
+
+        <button type="submit">Predict Demand</button>
+
+    </form>
+
+    <!-- Flask will send prediction here -->
+    {% if prediction %}
+    <div class="result">
+        <h2>{{ prediction }}</h2>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
