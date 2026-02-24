@@ -123,7 +123,7 @@ http://127.0.0.1:5000
 
 Machine Learning / Software Development
 
-GitHub: https://github.com/aftb777
+GitHub: https://github.com/aftb777, https://github.com/Atharva3650
 
 ---
 
